@@ -52,10 +52,6 @@ SELECT count(*)
 FROM `zoomcamp.yellow_taxi_ext`
 where fare_amount=0;
 ```
-
-128,210
-546,578
-20,188,016
 8,333 <--
 
 # Question 5. Partitioning and clustering
