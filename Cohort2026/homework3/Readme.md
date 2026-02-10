@@ -23,7 +23,7 @@ SELECT count(*) FROM `zoomcamp.yellow_taxi_ext`
 20332093
 ```
 
-# 2. Question 2. Data read estimation
+# Question 2. Data read estimation
 ```
 SELECT COUNT(DISTINCT PULocationID)
 FROM `zoomcamp.yellow_taxi_ext`;
@@ -58,7 +58,7 @@ where fare_amount=0;
 20,188,016
 8,333 <--
 
-# 5 Partitioning and clustering
+# Question 5. Partitioning and clustering
 ```
 CREATE OR REPLACE TABLE `zoomcamp.yellow_taxi_optimized` PARTITION BY DATE(tpep_dropoff_datetime) CLUSTER BY VendorID AS
 SELECT *
