@@ -131,11 +131,12 @@ Create a staging model stg_fhv_tripdata with these requirements:
 Filter out records where dispatching_base_num IS NULL
 Rename fields to match your project's naming conventions (e.g., PUlocationID → pickup_location_id)
 What is the count of records in stg_fhv_tripdata?
-
+```
 42,084,899
 43,244,693 --> answer
 22,998,722
 44,112,187
+```
 
 ```
 select count(*) 
