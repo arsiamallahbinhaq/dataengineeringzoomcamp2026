@@ -22,11 +22,12 @@ models/
     └── int_trips_unioned.sql (depends on stg_green_tripdata & stg_yellow_tripdata)
 ```
 If you run dbt run --select int_trips_unioned, what models will be built?
-
+```
 stg_green_tripdata, stg_yellow_tripdata, and int_trips_unioned (upstream dependencies) --> answer
 Any model with upstream and downstream dependencies to int_trips_unioned
 int_trips_unioned only
 int_trips_unioned, int_trips, and fct_trips (downstream dependencies)
+```
 
 # Question 2. dbt Tests
 You've configured a generic test like this in your schema.yml:
