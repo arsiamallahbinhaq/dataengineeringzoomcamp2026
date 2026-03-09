@@ -2,139 +2,221 @@
 
 This repository documents my learning journey through the **Data Engineering Zoomcamp 2026** organized by DataTalksClub.
 
-The course focuses on building **production-ready data pipelines** using modern data engineering tools such as Docker, Terraform, orchestration frameworks, data warehouses, and distributed processing systems. :contentReference[oaicite:0]{index=0}
+The course covers the fundamentals of modern **data engineering**, including data ingestion, orchestration, warehousing, analytics engineering, batch processing, and streaming pipelines.
 
-The goal of this repository is to track my **hands-on exercises, homework solutions, and experiments** while learning data engineering concepts and tools.
+This repository contains my **notes, homework solutions, and experiments** while completing the course.
 
 ---
 
-# Course Overview
+# Course Modules
 
-Data Engineering Zoomcamp is a **free multi-week course** designed to teach the fundamentals of building end-to-end data pipelines and working with modern data infrastructure. :contentReference[oaicite:1]{index=1}
+## Module 1 — Containerization and Infrastructure as Code
 
-Topics covered include:
+Topics covered:
 
-- Containerization and infrastructure setup
-- Workflow orchestration
-- Data warehousing
-- Analytics engineering
-- Batch processing with Spark
-- Streaming pipelines with Kafka
+* Introduction to Google Cloud Platform
+* Docker and Docker Compose
+* Running PostgreSQL in containers
+* Infrastructure setup with Terraform
 
-The course structure includes several modules and a final project where students build a full data pipeline. :contentReference[oaicite:2]{index=2}
+Tools:
+
+* Docker
+* Terraform
+* PostgreSQL
+* Google Cloud Platform
+
+---
+
+## Module 2 — Workflow Orchestration
+
+Topics covered:
+
+* Data lake concepts
+* Workflow orchestration
+* Building pipelines with orchestration tools
+
+Tools:
+
+* Kestra
+* GCP Storage
+
+---
+
+## Workshop 1 — Data Ingestion
+
+Topics covered:
+
+* Building scalable ingestion pipelines
+* Extracting data from APIs
+* Incremental loading strategies
+* Data normalization
+
+Tools:
+
+* Python
+* dltHub
+
+---
+
+## Module 3 — Data Warehousing
+
+Topics covered:
+
+* Data warehousing concepts
+* BigQuery architecture
+* Partitioning and clustering
+* Query optimization
+
+Tools:
+
+* BigQuery
+* SQL
+
+---
+
+## Module 4 — Analytics Engineering
+
+Topics covered:
+
+* Data modeling
+* Transformations with dbt
+* Data testing and documentation
+* Analytics layer development
+
+Tools:
+
+* dbt
+* BigQuery / DuckDB
+
+---
+
+## Module 5 — Data Platform
+
+Topics covered:
+
+* Data platform architecture
+* Lakehouse concepts
+* Managing scalable data platforms
+* Platform design considerations
+
+Tools:
+
+* Bruin
+
+---
+
+## Module 6 — Batch Processing
+
+Topics covered:
+
+* Distributed computing fundamentals
+* Apache Spark architecture
+* Spark DataFrames
+* Processing large datasets
+
+Tools:
+
+* Apache Spark
+* PySpark
+
+Example tasks:
+
+* Processing millions of NYC taxi trip records
+* Repartitioning datasets
+* Query optimization
+* Using Spark UI for monitoring jobs
+
+---
+
+## Module 7 — Streaming
+
+Topics covered:
+
+* Streaming architectures
+* Kafka fundamentals
+* Real-time data pipelines
+* Event-driven systems
+
+Tools:
+
+* Apache Kafka
+
+---
+
+# Repository Structure
+
+```
+dataengineeringzoomcamp2026
+│
+├── module1-docker-terraform
+├── module2-workflow-orchestration
+├── workshop1-data-ingestion
+├── module3-data-warehouse
+├── module4-analytics-engineering
+├── module5-data-platform
+├── module6-batch-processing
+├── module7-streaming
+└── project
+```
+
+---
 
 # Technologies Used
 
-Throughout the course, I worked with several industry-standard data engineering tools:
+Infrastructure
 
-### Infrastructure
-- Docker
-- Terraform
-- Google Cloud Platform (GCP)
+* Docker
+* Terraform
+* Google Cloud Platform
 
-### Data Storage & Warehousing
-- PostgreSQL
-- BigQuery
+Storage
 
-### Data Transformation
-- dbt
+* PostgreSQL
+* BigQuery
 
-### Processing Frameworks
-- Apache Spark (PySpark)
+Ingestion
 
-### Workflow Orchestration
-- Kestra
+* dltHub
 
-### Streaming
-- Apache Kafka
+Transformation
 
----
+* dbt
 
-# Key Learning Outcomes
+Processing
 
-During this course I learned how to:
+* Apache Spark
 
-- Build containerized data environments using Docker
-- Provision cloud infrastructure with Terraform
-- Ingest and store data in data warehouses
-- Transform data using dbt models
-- Process large datasets with Apache Spark
-- Monitor distributed jobs using Spark UI
-- Design scalable data pipelines
+Data Platform
 
-Example from the Spark module:
+* Bruin
 
-- Processing **4M+ NYC Taxi records**
-- Repartitioning large datasets
-- Calculating trip metrics
-- Joining datasets with lookup tables
+Streaming
+
+* Apache Kafka
 
 ---
 
-# Homework
+# Goals
 
-Each module contains practical homework assignments.
+Through this course I aim to:
 
-Examples include:
-
-- Setting up Dockerized data environments
-- Creating orchestration workflows
-- Designing warehouse tables
-- Building dbt transformation models
-- Running Spark batch jobs on large datasets
-
-Homework solutions are included in each module folder.
+* Build scalable data pipelines
+* Learn modern data platform architecture
+* Process large datasets using distributed systems
+* Implement batch and streaming pipelines
+* Strengthen my data engineering skills
 
 ---
 
-# Learning Resources
+# Resources
 
-Course repository:
-
+Official course repository
 https://github.com/DataTalksClub/data-engineering-zoomcamp
 
-Course materials include:
-
-- Recorded lectures
-- Hands-on workshops
-- Homework assignments
-- Community discussions
-
 ---
 
-# Progress
+# Connect
 
-| Module | Topic | Status |
-|------|------|------|
-| Module 1 | Docker & Terraform | Completed |
-| Module 2 | Workflow Orchestration | Completed |
-| Workshop | Data Ingestion | Completed |
-| Module 3 | Data Warehouse | Completed |
-| Module 4 | Analytics Engineering (dbt) | Completed |
-| Module 5 | Batch Processing (Spark) | Completed |
-| Module 6 | Streaming (Kafka) | In Progress |
-
----
-
-# Why I'm Learning Data Engineering
-
-My goal is to strengthen my skills in:
-
-- Data pipelines
-- Distributed data processing
-- Cloud data infrastructure
-- Analytics engineering
-
-This repository serves as a **learning log and portfolio of practical data engineering work**.
-
----
-
-# Connect With Me
-
-If you are also learning data engineering, feel free to connect!
-
-LinkedIn:  
-https://www.linkedin.com/in/arsiamallahbinhaq/ 
-
-GitHub:  
+GitHub
 https://github.com/arsiamallahbinhaq
