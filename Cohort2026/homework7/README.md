@@ -109,12 +109,76 @@ Which PULocationID had the most trips in a single 5-minute window?
 - 75
 - 166
 
-Script: q4_jobs.py
+Script: q4_answer.py
+
+```
+SELECT PULocationID, num_trips
+FROM aggregated_pickup
+ORDER BY num_trips DESC
+LIMIT 3;
+```
+```
+ pulocationid | num_trips 
+--------------+-----------
+           74 |        15
+           74 |        14
+           74 |        13
+(3 rows)
+```
 
 Command:
 ```
 docker compose exec -d jobmanager ./bin/flink run \
   -py /opt/src/jobs/aggregated_pickup_job.py \
+  --pyFiles /opt/src \
+  -d
+```
+
+## Question 5. Session window - longest streak
+
+Create another Flink job that uses a session window with a 5-minute gap on PULocationID, using lpep_pickup_datetime as the event time with a 5-second watermark tolerance.
+
+A session window groups events that arrive within 5 minutes of each other. When there's a gap of more than 5 minutes, the window closes.
+
+Write the results to a PostgreSQL table and find the PULocationID with the longest session (most trips in a single session).
+
+How many trips were in the longest session?
+
+- 12
+- 31
+- 51
+- 81 --> Answer
+
+Script: 
+q5_answer.py
+
+```
+cd ../../data-engineering-zoomcamp/07-streaming/workshop && \
+docker compose down && docker compose up -d && sleep 15 && \
+docker compose exec postgres psql -U postgres -c "DROP TABLE IF EXISTS session_pickup; CREATE TABLE session_pickup (session_start TIMESTAMP(3), session_end TIMESTAMP(3), PULocationID INT, num_trips BIGINT, PRIMARY KEY (session_start, session_end, PULocationID));" && \
+uv run python src/producers/q2_producer.py && \
+docker compose exec -d jobmanager ./bin/flink run -py /opt/src/jobs/session_pickup_job.py --pyFiles /opt/src -d && \
+sleep 30 && \
+docker compose exec postgres psql -U postgres -c "SELECT PULocationID, num_trips FROM session_pickup ORDER BY num_trips DESC LIMIT 3;"
+```
+
+## Question 6. Tumbling window - largest tip
+Create a Flink job that uses a 1-hour tumbling window to compute the total tip_amount per hour (across all locations).
+
+Which hour had the highest total tip amount?
+
+- 2025-10-01 18:00:00
+- 2025-10-16 18:00:00
+- 2025-10-22 08:00:00
+- 2025-10-30 16:00:00
+
+Script:
+q6_answer.py
+
+Command:
+```
+docker compose exec -d jobmanager ./bin/flink run \
+  -py /opt/src/jobs/tumbling_tips_job.py \
   --pyFiles /opt/src \
   -d
 ```
