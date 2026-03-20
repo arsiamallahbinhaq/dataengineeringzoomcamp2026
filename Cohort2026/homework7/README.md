@@ -88,3 +88,33 @@ Answer:
 python consumers_q3.py
 Trips with distance > 5: 8506
 ```
+
+## Question 4. Tumbling window - pickup location
+Create a Flink job that reads from green-trips and uses a 5-minute tumbling window to count trips per PULocationID.
+
+Write the results to a PostgreSQL table with columns: window_start, PULocationID, num_trips.
+
+After the job processes all data, query the results:
+
+```
+SELECT PULocationID, num_trips
+FROM <your_table>
+ORDER BY num_trips DESC
+LIMIT 3;
+Which PULocationID had the most trips in a single 5-minute window?
+```
+
+- 42
+- 74 --> answer
+- 75
+- 166
+
+Script: q4_jobs.py
+
+Command:
+```
+docker compose exec -d jobmanager ./bin/flink run \
+  -py /opt/src/jobs/aggregated_pickup_job.py \
+  --pyFiles /opt/src \
+  -d
+```
