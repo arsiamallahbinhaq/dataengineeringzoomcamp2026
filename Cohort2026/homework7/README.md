@@ -64,6 +64,8 @@ How long did it take to send the data?
 - 120 seconds
 - 300 seconds
 
+Script: [producer.py](https://github.com/arsiamallahbinhaq/dataengineeringzoomcamp2026/blob/main/Cohort2026/homework7/producer.py)
+
 Answer:
 ```
 python producer.py
@@ -88,6 +90,8 @@ Answer:
 python consumers_q3.py
 Trips with distance > 5: 8506
 ```
+Script:
+[consumer_q3.py](https://github.com/arsiamallahbinhaq/dataengineeringzoomcamp2026/blob/main/Cohort2026/homework7/consumer_q3.py)
 
 ## Question 4. Tumbling window - pickup location
 Create a Flink job that reads from green-trips and uses a 5-minute tumbling window to count trips per PULocationID.
@@ -109,7 +113,7 @@ Which PULocationID had the most trips in a single 5-minute window?
 - 75
 - 166
 
-Script: q4_answer.py
+Script: [q4_answer.py](https://github.com/arsiamallahbinhaq/dataengineeringzoomcamp2026/blob/main/Cohort2026/homework7/q4_answer.py)
 
 ```
 SELECT PULocationID, num_trips
@@ -150,7 +154,7 @@ How many trips were in the longest session?
 - 81 --> Answer
 
 Script: 
-q5_answer.py
+[q5_answer.py](https://github.com/arsiamallahbinhaq/dataengineeringzoomcamp2026/blob/main/Cohort2026/homework7/q5_answer.py)
 
 ```
 cd ../../data-engineering-zoomcamp/07-streaming/workshop && \
@@ -173,7 +177,7 @@ Which hour had the highest total tip amount?
 - 2025-10-30 16:00:00
 
 Script:
-q6_answer.py
+[q6_answer.py](https://github.com/arsiamallahbinhaq/dataengineeringzoomcamp2026/blob/main/Cohort2026/homework7/q6_answer.py)
 
 Command:
 ```
